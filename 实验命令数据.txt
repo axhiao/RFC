@@ -1,0 +1,205 @@
+scatter(a(:,1),a(:,2))
+axis([0 1 0 1]);
+plot(a(:,1),a(:,2),'r.')
+xlabel('f1');
+ylabel('f2');
+title('ZDT3');
+plot(a(:,1),a(:,2),'r*',b(:,1),b(:,2),'g.')
+
+plot(a1(:,1),a1(:,2),'r.')
+plot(a1(:,1),a1(:,2),'r.',a2(:,1),a2(:,2),'g.')
+plot(a2(:,1),a2(:,2),'r.',a3(:,1),a3(:,2),'g.')
+plot(a3(:,1),a3(:,2),'r.',a4(:,1),a4(:,2),'g.')
+
+x=(0:0.001:1)';
+y=1-x;
+plot(a1(:,1),a1(:,2),'b.',a2(:,1),a2(:,2),'g.',a3(:,1),a3(:,2),'k.',a4(:,1),a4(:,2),'r.',x(:),y(:),'c.')
+%axis([0 1.4 0 1.40000001]);
+xlabel('f1');
+ylabel('f1');
+title('UF7-MOEA/D');
+h=legend('12000 function evalution','24000 function evalution','54000 function evalution','114000 function evalution','PF',5);
+
+plot3(a(:,1),a(:,2),a(:,3),'r.',b(:,1),b(:,2),b(:,3),'go')
+xlabel('f1');
+ylabel('f2');
+zlabel('f3');
+title('WFG9');
+h=legend('MOEAD-DE','coello',2);
+
+plot3(a(:,1),a(:,2),a(:,3),'r.')
+xlabel('x1');
+ylabel('x2');
+zlabel('x3');
+title('WFG2-PS');
+plot3(a(:,4),a(:,5),a(:,6),'r.')
+xlabel('x4');
+ylabel('x5');
+zlabel('x6');
+title('WFG2-PS');
+plot3(a(:,7),a(:,8),a(:,9),'r.')
+xlabel('x7');
+ylabel('x8');
+zlabel('x9');
+title('WFG2-PS');
+
+
+axis([0 1.4 0 1.4 0 1.4]);
+
+boxplot([x1,x2,x3],'notch','on')
+ylabel('SPACING');
+title('UF5');
+
+plot(a(:,1),a(:,2),'r.',x(1:156,1),x(1:156,2),'-k',x(157:297,1),x(157:297,2),'-k',x(298:381,1),x(298:381,2),'-k',x(382:446,1),x(382:446,2),'-k',x(447:500,1),x(447:500,2),'-k')
+xlabel('f1');
+ylabel('f2');
+title('ZDT3');
+h=legend('MOEA/D-AWA-SBX','PF',2);
+
+plot(a(:,1),a(:,2),'r.',x(:,1),x(:,2),'-k')
+xlabel('f1');
+ylabel('f2');
+title('ZDT6');
+h=legend('MOEA/D-AWA-SBX','PF',2);
+
+x=(0:0.001:1)';
+y=1-x.^0.5;
+plot(a(:,1),a(:,2),'r.',x(:),y(:),'-k')
+%axis([0 1 0 1.01]);
+xlabel('f1');
+ylabel('f2');
+title('ZDT4');
+h=legend('MOEA/D-AWA-SBX','PF',2);
+
+plot(a(:,1),a(:,2),'ro',a1(:,1),a1(:,2),'g.');
+xlabel('f1');
+ylabel('f2');
+title('UF6');
+axis([0 1.4 0 1.4]);
+h=legend('MOEA-D-WEIGHT-UPDATE','PF',2);
+
+x=(0:0.001:1)';
+y=1-x.^0.5;
+plot(a(:,1),a(:,2),'ro',x(:),y(:),'-g')
+xlabel('f1');
+ylabel('f2');
+title('ZDT4');
+axis([0 1.4 0 1.4]);
+h=legend('MOEA-D-SBX-NORMAL','PF',2);
+
+x=(0:0.001:1)';
+y=1-x.^0.5;
+plot(a(:,1),a(:,2),'r.',x(:),y(:),'-k')
+axis([0 1.4 0 1.40000001]);
+xlabel('f1');
+ylabel('f1');
+title('UF4');
+h=legend('NSGA-II-DE','PF',2);
+
+x=(0:0.001:1)';
+y=1-x.^2;
+plot(a(:,1),a(:,2),'r.',x(:),y(:),'-k')
+xlabel('f1');
+ylabel('f2');
+title('UF4');
+h=legend('MOEA/D-AWA-DE','PF',2);
+
+
+x=(0:0.001:1)';
+y=1-x;
+plot(a(:,1),a(:,2),'r.',x(:),y(:),'-k')
+axis([0 1.4 0 1.4000001]);
+xlabel('f1');
+ylabel('f2');
+title('UF7');
+h=legend('NSGA-II-DE','PF',2);
+
+N = 2;
+x1=(1/4:0.0001:0.5);
+y1=1-x1;
+x2=(3/4:0.0001:1);
+y2=1-x2;
+plot(a(:,1),a(:,2),'r.',x1(:),y1(:),'-k',x2(:),y2(:),'-k',0,1,'k.')
+axis([0 1.4 0 1.4000001]);
+xlabel('f1');
+ylabel('f2');
+title('UF6');
+h=legend('MOEA/D-AWA-DE','PF',2);
+
+N = 10;
+x=(0:1/(2*N):1);
+y=1-x;
+plot(a(:,1),a(:,2),'r.',x(:),y(:),'k.')
+axis([0 2 0 2]);
+xlabel('f1');
+ylabel('f2');
+title('UF5');
+h=legend('NSGA-II-DE','PF',2);
+
+
+x=[];y=[];z=[];
+[theta1,theta2] = meshgrid(0:pi/100:pi/2,0:pi/100:pi/2);
+for i=1:size(theta1,1)
+	for j=1:size(theta1,2)
+		x(i,j)=cos(theta1(i,j))*cos(theta2(i,j));
+		y(i,j)=cos(theta1(i,j))*sin(theta2(i,j));
+		z(i,j)=sin(theta1(i,j));
+	end
+end
+plot3(a(:,1),a(:,2),a(:,3),'ro',x,y,z,'g*');
+xlabel('f1');
+ylabel('f2');
+zlabel('f3');
+title('UF8');
+axis([0 1 0 1 0 1]);
+h=legend('MOEA-D-DE result','真实的Pareto前端',2);
+
+
+x1=[];y1=[];z1=[];
+i=0;
+for cc=0:0.01:1
+	i=i+1;
+	j=0;
+	for tt=0:0.01:0.25*(1-cc)
+		j=j+1;
+		z1(i,j)=cc;
+		x1(i,j)=tt;
+		y1(i,j)=1-z1(i,j)-x1(i,j);
+	end
+end
+x2=[];y2=[];z2=[];
+i=0;
+for cc=0:0.01:1
+	i=i+1;
+	j=0;
+	for tt=0.75*(1-cc):0.01:(1-cc)
+		j=j+1;
+		z2(i,j)=cc;
+		x2(i,j)=tt;
+		y2(i,j)=1-z2(i,j)-x2(i,j);
+	end
+end
+plot3(a(:,1),a(:,2),a(:,3),'ro',x1,y1,z1,'g*',x2,y2,z2,'g*');
+xlabel('f1');
+ylabel('f2');
+zlabel('f3');
+title('UF9');
+h=legend('MOEA-D-DE result','真实的Pareto前端',2);
+
+
+x=[];y=[];z=[];
+[theta1,theta2] = meshgrid(0:pi/100:pi/2,0:pi/100:pi/2);
+for i=1:size(theta1,1)
+	for j=1:size(theta1,2)
+		x(i,j)=cos(theta1(i,j))*cos(theta2(i,j));
+		y(i,j)=cos(theta1(i,j))*sin(theta2(i,j));
+		z(i,j)=sin(theta1(i,j));
+	end
+end
+plot3(a(:,1),a(:,2),a(:,3),'ro',x,y,z,'g*');
+xlabel('f1');
+ylabel('f2');
+zlabel('f3');
+title('UF10');
+axis([0 1 0 1 0 1]);
+h=legend('MOEA-D-DE result','真实的Pareto前端',2);

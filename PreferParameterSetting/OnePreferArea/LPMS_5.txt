@@ -1,0 +1,2 @@
+num_prefer_area	aspiration_point reservation_point     veto_threshold   EpsilonDistance
+1		0 0 0 0 0	 20 20 20 20 20        2 2 2 2 2	0.0008	  

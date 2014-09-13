@@ -1,0 +1,24 @@
+str_pr = 'F:\maxiaoliang\2013-1-1\复件 (2) pMOEAD\PF\';
+%str_appf = 'C:\Users\wtt\Desktop\MOEAD-AWA (Prefer version)\moead\POF\';
+%str_appf = 'C:\Users\wtt\Desktop\moead 历史版本\moead_de_cpp_cec_2009 历史版本\moead\POF\';
+ str_appf = 'F:\maxiaoliang\2013-1-1\复件 (2) pMOEAD\POF\';
+test_case= 'ZDT6';
+count = 10;
+
+str_pr = strcat(str_pr, test_case);
+str_pr = strcat(str_pr, '.dat');
+pftrue = importdata(str_pr);
+
+for i=1:
+str_appf = strcat(str_appf, 'POF_MOEAD_');
+str_appf = strcat(str_appf, test_case);
+str_appf = strcat(str_appf, '_RUN');
+str_appf = strcat(str_appf, num2str(count));
+str_appf = strcat(str_appf, '.txt');
+Appro_pftrue = importdata(str_appf);
+
+figure(10+floor(rand*1000));
+point=[[0 0];[1 1]];
+plot(pftrue(:,1),pftrue(:,2),'k-',Appro_pftrue(3:size(Appro_pftrue,1),1),Appro_pftrue(3:size(Appro_pftrue,1),2),'b.',point(:,1),point(:,2),'g-');
+%plot(Appro_pftrue(3:size(Appro_pftrue,1),1),Appro_pftrue(3:size(Appro_pftrue,1),2),'b.')
+title(test_case);xlabel('f1');ylabel('f2');
